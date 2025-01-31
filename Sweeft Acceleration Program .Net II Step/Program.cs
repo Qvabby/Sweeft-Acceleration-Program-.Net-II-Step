@@ -1,5 +1,7 @@
 ﻿using Sweeft_Acceleration_Program_.Net_II_Step;
 
+//1-5 დავალებები.
+
 InternTasks internTasks = new InternTasks();
 
 //Task 1. (IsPalindrome function)
@@ -32,7 +34,7 @@ Console.WriteLine("4. Check if sequence of parentheses is properly:\n");
 Console.ForegroundColor = ConsoleColor.Cyan;
 Console.WriteLine($"\t \\\"„(„ და „“\\\" - {internTasks.IsProperly("„(„ და „“")}");
 Console.WriteLine($"\t )()()( - {internTasks.IsProperly(")()()(")}");
-Console.WriteLine($"\t ()(()) - {internTasks.IsProperly("()(())")}");
+Console.WriteLine($"\t ()(()) - {internTasks.IsProperly("()(())")}\n");
 Console.ResetColor();
 
 //Task 5 (ways to go up n stairs.)
