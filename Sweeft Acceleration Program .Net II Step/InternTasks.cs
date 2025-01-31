@@ -8,7 +8,6 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
 {
     public class InternTasks
     {
-
         //არის თუ არა ტექსტი პალინდრომი
         /// <summary>
         /// Checks if specific string is Palindrome or not.

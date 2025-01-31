@@ -1,7 +1,5 @@
 ﻿using Sweeft_Acceleration_Program_.Net_II_Step;
-
 //1-5 დავალებები.
-
 InternTasks internTasks = new InternTasks();
 
 //Task 1. (IsPalindrome function)
