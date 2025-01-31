@@ -8,6 +8,7 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
 {
     public class InternTasks
     {
+
         //არის თუ არა ტექსტი პალინდრომი
         /// <summary>
         /// Checks if specific string is Palindrome or not.
@@ -37,6 +38,7 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
             return true;
 
         }
+
         //აბრუნებს მონეტების მინიმალურ რაოდენობას, რომლითაც შეგვიძლია ეს თანხა დავახურდაოთ
         /// <summary>
         /// Returns the minimal amount of coins for specific amount of Tetri.
@@ -59,6 +61,7 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
             amount -= n * 1;
             return x + y + z + m + n;
         }
+
         //აბრუნებს მინიმალურ მთელ რიცხვს, რომელიც 0-ზე მეტია და ამ მასივში არ შედის.
         /// <summary>
         /// Returns the minimal number which is not in array.
@@ -69,6 +72,8 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
         {
             //count is not 0
             int count = 1;
+            //sort the array
+            Array.Sort(array);
             for (int i = 0; i < array.Length; i++)
             {
                 //if count can't be less than specific value, let it be 1 unit greater.
@@ -78,6 +83,27 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
                 }
             }
             return count;
+        }
+
+        //აბრუნებს ფრჩხილები არის თუ არა მათემატიკურად სწორად დასმული.
+        /// <summary>
+        /// Checks if sequence of parentheses is properly.
+        /// </summary>
+        /// <param name="sequence">text where we check parentheses</param>
+        /// <returns>boolean value.</returns>
+        public bool IsProperly(string sequence)
+        {
+            int open = 0, close = 0;
+            foreach (var cr in sequence)
+            {
+                //checks if closeing is before opening
+                if (close > open) { return false; }
+                //counts amount of closings and openings
+                if (cr == '(') { open++; }
+                if (cr == ')') { close++; }
+            }
+            if (open != close) { return false; }
+            return true;
         }
     }
 }
