@@ -105,5 +105,42 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
             if (open != close) { return false; }
             return true;
         }
+
+        //დაითვლის n სართულზე ასვლის ვარიანტების რაოდენობას.
+        /// <summary>
+        /// Returns the amount of ways to go up n stairs.
+        /// </summary>
+        /// <param name="stairCount">stairs count</param>
+        /// <returns>varaints count</returns>
+        public int CountVariants(int stairCount)
+        {
+            //method 1 (recursion)
+            ////ერთი ნაბიჯი = n-1
+            ////ორი ნაბიჯი = n-2
+
+            ////if its either 1 or 2, there is 1 or 2 variants of going up.
+            //if (stairCount == 1) return 1;
+            //if (stairCount == 2) return 2;
+            ////f(n) = f(n-1) + f(n-2)
+            //return CountVariants(stairCount - 1) + CountVariants(stairCount - 2);
+
+            //method 2 (dynamic)
+            if (stairCount == 1) return 1;
+            if (stairCount == 2) return 2;
+            //f(n) = f(n-1) + f(n-2):
+            int pre = 1; // f(1)
+            int pre2 = 2; // f(2)
+            int variants = 0; //f(n)
+            //ვიწიყებთ i = 3 რადგან 1 და 2 უკვე წინასწარ განსაზღვრულია.
+            for (int i = 3; i <= stairCount; i++)
+            {
+                //f(n) = f(n-1) + f(n-2):
+                variants = pre + pre2;
+                pre = pre2;
+                pre2 = variants;
+            }
+            return variants;
+        }
+
     }
 }
