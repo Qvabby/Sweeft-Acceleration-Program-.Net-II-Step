@@ -27,7 +27,7 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
             //return reverse == s;
 
             //2nd method.
-            for (int i = 0; i < s.Length/2; i++)
+            for (int i = 0; i < s.Length / 2; i++)
             {
                 if (s[i] != s[s.Length - 1 - i])
                 {
@@ -35,7 +35,7 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
                 }
             }
             return true;
-            
+
         }
         //აბრუნებს მონეტების მინიმალურ რაოდენობას, რომლითაც შეგვიძლია ეს თანხა დავახურდაოთ
         /// <summary>
@@ -48,7 +48,7 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
             //Instead of using loops we can use this method.
             //1 5 10 20 50
             int x = amount / 50;
-            amount -= x*50;
+            amount -= x * 50;
             int y = amount / 20;
             amount -= y * 20;
             int z = amount / 10;
@@ -57,7 +57,27 @@ namespace Sweeft_Acceleration_Program_.Net_II_Step
             amount -= m * 5;
             int n = amount;
             amount -= n * 1;
-            return x+y+z+m+n;
+            return x + y + z + m + n;
+        }
+        //აბრუნებს მინიმალურ მთელ რიცხვს, რომელიც 0-ზე მეტია და ამ მასივში არ შედის.
+        /// <summary>
+        /// Returns the minimal number which is not in array.
+        /// </summary>
+        /// <param name="array">array of numbers</param>
+        /// <returns>intiger which isn't contained in array</returns>
+        public int NotContains(int[] array)
+        {
+            //count is not 0
+            int count = 1;
+            for (int i = 0; i < array.Length; i++)
+            {
+                //if count can't be less than specific value, let it be 1 unit greater.
+                if (array[i] <= count)
+                {
+                    count = array[i] + 1;
+                }
+            }
+            return count;
         }
     }
 }
